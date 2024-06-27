@@ -35,3 +35,9 @@ the accuracy and efficiency of fraud detection.
 ![transaction](transaction.png)
 
 ![result](result.png)
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Author
+Jagdeesh P
