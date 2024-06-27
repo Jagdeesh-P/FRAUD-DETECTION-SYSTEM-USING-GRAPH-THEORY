@@ -27,3 +27,7 @@ the accuracy and efficiency of fraud detection.
 - User Interface: HTML, CSS, JavaScript
 - Data Handling: Pandas
 - Environment: Virtualenv for environment management
+
+![index_page](index.png)
+
+![index_page](index.png)
