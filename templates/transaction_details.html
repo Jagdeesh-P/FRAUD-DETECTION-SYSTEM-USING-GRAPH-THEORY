@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Transaction Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('/static/background.jpg');
+            background-size: cover;
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Enter Transaction Details</h1>
+        <form action="/results" method="post" class="mt-5">
+            <input type="hidden" name="num_transactions" value="{{ num_transactions }}">
+            <div id="transaction-forms">
+                <!-- JavaScript will generate forms here -->
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mt-4">Detect Fraud</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const numTransactions = {{ num_transactions }};
+            const container = document.getElementById('transaction-forms');
+
+            for (let i = 0; i < numTransactions; i++) {
+                const formGroup = document.createElement('div');
+                formGroup.className = 'form-group';
+
+                formGroup.innerHTML = `
+                    <h5>Transaction ${i + 1}</h5>
+                    <label for="source${i}">Source Account:</label>
+                    <input type="text" class="form-control" id="source${i}" name="source${i}" required>
+                    <label for="target${i}" class="mt-2">Target Account:</label>
+                    <input type="text" class="form-control" id="target${i}" name="target${i}" required>
+                    <label for="amount${i}" class="mt-2">Amount:</label>
+                    <input type="number" class="form-control" id="amount${i}" name="amount${i}" required>
+                    <label for="timestamp${i}" class="form-label mt-2">Timestamp:</label>
+                    <input type="text" class="form-control" id="timestamp${i}" name="timestamp${i}" required>
+                    <label for="account_age${i}" class="mt-2">Account Age (days):</label>
+                    <input type="number" class="form-control" id="account_age${i}" name="account_age${i}" required>
+                    <label for="balance${i}" class="mt-2">Account Balance:</label>
+                    <input type="number" class="form-control" id="balance${i}" name="balance${i}" required>
+                    <hr>
+                `;
+                container.appendChild(formGroup);
+            }
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Fraud Detection Results</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('/static/background.jpg');
+            background-size: cover;
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        .list-group{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Transaction Fraud Detection Results</h1>
+        <h2>Transactions:</h2>
+        <ul class="list-group">
+            {% for transaction in transactions %}
+                <li class="list-group-item">{{ transaction[0] }} -> {{ transaction[1] }}: ${{ transaction[2] }} at {{ transaction[3] }} (Account Age: {{ transaction[4] }} days, Balance: ${{ transaction[5] }})</li>
+            {% endfor %}
+        </ul>
+        <h2 class="mt-4">Potential Fraudulent Transactions:</h2>
+        <ul class="list-group">
+            {% for fraud_with_reason in frauds_with_reasons %}
+                <li class="list-group-item list-group-item-danger">{{ fraud_with_reason[0][0] }} -> {{ fraud_with_reason[0][1] }}: ${{ fraud_with_reason[0][2] }} at {{ fraud_with_reason[0][3] }} (Account Age: {{ fraud_with_reason[0][4] }} days, Balance: ${{ fraud_with_reason[0][5] }}, Reasons: {{ fraud_with_reason[1] }})</li>
+            {% endfor %}
+        </ul>
+
+        <h2 class="mt-4">Transaction Graph:</h2>
+        <img src="{{ url_for('graph') }}" alt="Transaction Graph" class="img-fluid">
+        <a href="/index" class="btn btn-primary mt-4">New Transaction Details</a>
+        <a href="/" class="btn btn-primary mt-4">Logout</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Fraud Detection</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .split {
+      height: 100%;
+      width: 70%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 30px;
+    }
+
+    .left {
+      left: 0;
+      background-color: #f1f1f1;
+    }
+
+    .right {
+      background-image: url('/static/background.jpg');
+      background-size: cover;
+      right: 0;
+      background-color: black;
+    }
+
+    header {
+      color: black;
+      padding: 4rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header img {
+      max-width: 90px;
+      position: absolute;
+      top: 47%;
+      left: 5%;
+      transform: translateY(-50%);
+    }
+
+    h1 {
+      font-weight: bold;
+      font-family: 'consolas';
+      font-size: 30px;
+      position: absolute;
+      top: 100%;
+      left: 1%;
+      transform: translateY(-50%);
+    }
+
+    section {
+      height: 50%;
+      width: 40%; /* Ensure section takes full width of the left split */
+      display: flex;
+      justify-content: center; /* Center horizontally */
+    }
+
+    form {
+      position: absolute;
+      top: 25%;
+      padding: 5%;
+    }
+
+    h2 {
+      font-family: 'consolas';
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    label {
+      font-family: 'consolas';
+      font-size: 16px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 8px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    h3 {
+      color: white;
+      padding: 80px;
+      font-size: 190%;
+      font-weight: bold;
+      font-family: 'consolas';
+      position: absolute;
+      top: 40%;
+      left: 10%;
+      transform: translateY(-50%);
+    }
+
+    .login-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 1rem 3.5rem;
+      background-color: #fff;
+      color: #333;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="split left">
+    <header>
+      <h1>Transaction Fraud Detection</h1>
+    </header>
+    <section>
+      <form id="loginForm" class="login-form" action="/login" method="POST">
+        <h2>Login</h2>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+  </div>
+  <div class="split right">
+    <h3 style="font-weight: bold;">Secure access to Transaction Fraud Detection</h3>
+  </div>
+</body>
+</html>
