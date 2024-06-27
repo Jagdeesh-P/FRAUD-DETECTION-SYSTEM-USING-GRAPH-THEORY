@@ -28,6 +28,10 @@ the accuracy and efficiency of fraud detection.
 - Data Handling: Pandas
 - Environment: Virtualenv for environment management
 
-![index_page](index.png)
+![login](login.png)
 
-![index_page](index.png)
+![home](home.png)
+
+![transaction](transaction.png)
+
+![result](result.png)
